@@ -37,7 +37,11 @@ export default function Home() {
         const data = await res.json();
 
         if (data.error) {
-          setWeather(<h1>Please type an existing location...</h1>);
+          setWeather(
+            <h1 className="font-semibold mt-5 text-2xl">
+              Please type an existing location...
+            </h1>
+          );
         } else {
           const api_data = {
             country: data.location.country,
@@ -72,7 +76,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="text-center text-gray-600">
+              <div className="text-center text-gray-700 font-bold">
                 {api_data.condition}
               </div>
               <div className="flow-root p-2 mt-4">
@@ -110,8 +114,8 @@ export default function Home() {
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="18"
+              height="18"
               fill="currentColor"
               className="bi bi-plus-circle"
               viewBox="0 0 16 16"
@@ -122,7 +126,7 @@ export default function Home() {
             </svg>
           </div>
           <input
-            className="block bg-white text-black rounded-lg opacity-70 pl-10 p-3 placeholder:font-bold capitalize w-full"
+            className="block bg-white text-black rounded-lg opacity-70 pl-10 p-3 placeholder:font-bold placeholder:text-gray-700 capitalize w-full"
             type="text"
             id="location"
             value={location}
@@ -141,7 +145,7 @@ export default function Home() {
             className="w-5 h-5"
             fill="none"
             stroke="currentColor"
-            viewBox="0 0 24 24"
+            viewBox="0 0 22 22"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
